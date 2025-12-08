@@ -10,20 +10,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SujudKu">
-
-        <!-- HALAMAN LOGIN (LAUNCHER) -->
+        <activity
+            android:name=".KiblatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" /> <!-- HALAMAN LOGIN (LAUNCHER) -->
         <activity
             android:name=".ActivityLogin"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity>
-
-        <!-- HALAMAN SELANJUTNYA -->
+        </activity> <!-- HALAMAN SELANJUTNYA -->
         <activity
             android:name=".MainActivity"
             android:exported="false" />
