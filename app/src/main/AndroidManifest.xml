@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
@@ -11,23 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SujudKu">
         <activity
-            android:name=".KiblatActivity"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
-            android:exported="false" /> <!-- HALAMAN LOGIN (LAUNCHER) -->
+            android:name=".DzikirDetailActivity"
+            android:exported="false" />
         <activity
-            android:name=".ActivityLogin"
+            android:name=".DzikirDoaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PrayerDetailActivity"
+            android:exported="false" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- HALAMAN SELANJUTNYA -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+        </activity>
     </application>
 
 </manifest>
