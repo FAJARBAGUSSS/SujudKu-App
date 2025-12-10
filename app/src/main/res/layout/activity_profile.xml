@@ -33,8 +33,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/ic_masjid"
-                android:tint="#1B5E20"
-                android:layout_marginBottom="8dp"
+                app:tint="#1B5E20"  android:layout_marginBottom="8dp"
                 android:contentDescription="Profil Icon" />
 
             <TextView

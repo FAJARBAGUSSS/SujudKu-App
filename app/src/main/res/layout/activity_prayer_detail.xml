@@ -47,7 +47,7 @@
                     android:layout_height="24dp"
                     android:layout_marginEnd="16dp"
                     android:src="@drawable/ic_bell"
-                    android:tint="#1B5E20"
+                    app:tint="#1B5E20"
                     android:contentDescription="Notifikasi" />
                 <ImageView
                     android:id="@+id/btn_share"
