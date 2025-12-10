@@ -1,6 +1,8 @@
 package com.example.sujudku
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -10,21 +12,49 @@ class PrayerDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prayer_detail)
 
-        // Ambil data yang dikirim dari MainActivity
         val prayerName = intent.getStringExtra("PRAYER_NAME") ?: "Sholat"
         val prayerTime = intent.getStringExtra("PRAYER_TIME") ?: "00:00"
 
-        // Update tampilan berdasarkan data yang diterima
-        findViewById<TextView>(R.id.tv_detail_prayer_name).text = prayerName
-        findViewById<TextView>(R.id.tv_detail_prayer_time).text = prayerTime
+        val tvName = findViewById<TextView>(R.id.tv_detail_prayer_name)
+        val tvTime = findViewById<TextView>(R.id.tv_detail_prayer_time)
+        val tvDesc = findViewById<TextView>(R.id.tv_detail_deskripsi)
+        val tvNiatArab = findViewById<TextView>(R.id.tv_detail_niat_arab)
+        val tvNiatArti = findViewById<TextView>(R.id.tv_detail_niat_arti)
+        val btnShare = findViewById<ImageView>(R.id.btn_share)
 
-        // Contoh Logika: Mengubah Niat & Deskripsi berdasarkan Nama Sholat
-        if (prayerName == "Subuh") {
-            findViewById<TextView>(R.id.tv_detail_deskripsi).text = getString(R.string.deskripsi_subuh)
-            findViewById<TextView>(R.id.tv_detail_niat_arab).text = getString(R.string.niat_subuh_arab)
-            findViewById<TextView>(R.id.tv_detail_niat_arti).text = getString(R.string.niat_subuh_arti)
+        tvName.text = prayerName
+        tvTime.text = prayerTime
+
+        // Set isi berdasarkan jenis sholat
+        when (prayerName) {
+            "Subuh" -> {
+                tvDesc.text = getString(R.string.deskripsi_subuh)
+                tvNiatArab.text = getString(R.string.niat_subuh_arab)
+                tvNiatArti.text = getString(R.string.niat_subuh_arti)
+            }
+
+            // Tambah sholat lain di sini jika mau
         }
-        // Anda bisa menambahkan 'else if (prayerName == "Dzuhur")' di sini untuk sholat lainnya
-        // Untuk saat ini, kita hanya menampilkan data Subuh secara detail.
+
+        // ➤ FITUR SHARE
+        btnShare.setOnClickListener {
+            val shareText = """
+                🕌 *${prayerName}*
+                🕒 Waktu: $prayerTime
+
+                📖 Niat:
+                ${tvNiatArab.text}
+
+                Artinya:
+                ${tvNiatArti.text}
+            """.trimIndent()
+
+            val shareIntent = Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(Intent.EXTRA_TEXT, shareText)
+            }
+
+            startActivity(Intent.createChooser(shareIntent, "Bagikan Niat Sholat"))
+        }
     }
 }

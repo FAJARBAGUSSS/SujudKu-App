@@ -58,8 +58,10 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:paddingHorizontal="16dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintTop_toBottomOf="@id/et_search"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation">
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="-67dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,12 +69,29 @@
             android:orientation="vertical"
             android:paddingBottom="16dp">
 
-            <include layout="@layout/item_dzikir_doa" android:id="@+id/item_tidur"/>
-            <include layout="@layout/item_dzikir_doa" android:id="@+id/item_ayat_kursi"/>
-            <include layout="@layout/item_dzikir_doa" android:id="@+id/item_makan"/>
-            <include layout="@layout/item_dzikir_doa" android:id="@+id/item_keluar_rumah"/>
-            <include layout="@layout/item_dzikir_doa" android:id="@+id/item_istighfar"/>
-            <include layout="@layout/item_dzikir_doa" android:id="@+id/item_tasbih"/>
+            <include
+                android:id="@+id/item_tidur"
+                layout="@layout/item_dzikir_doa" />
+
+            <include
+                android:id="@+id/item_ayat_kursi"
+                layout="@layout/item_dzikir_doa" />
+
+            <include
+                android:id="@+id/item_makan"
+                layout="@layout/item_dzikir_doa" />
+
+            <include
+                android:id="@+id/item_keluar_rumah"
+                layout="@layout/item_dzikir_doa" />
+
+            <include
+                android:id="@+id/item_istighfar"
+                layout="@layout/item_dzikir_doa" />
+
+            <include
+                android:id="@+id/item_tasbih"
+                layout="@layout/item_dzikir_doa" />
 
         </LinearLayout>
     </ScrollView>
@@ -81,10 +100,11 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_nav_menu"
+        android:background="@android:color/white"
         app:itemIconTint="@color/nav_item_color"
         app:itemTextColor="@color/nav_item_color"
-        android:background="@android:color/white"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        tools:layout_editor_absoluteX="-67dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
