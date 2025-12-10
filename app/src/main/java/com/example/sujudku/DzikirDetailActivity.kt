@@ -123,13 +123,13 @@ class DzikirDetailActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_dzikir -> true
-                R.id.nav_saya -> {
-                    startActivity(Intent(this, ProfileActivity::class.java).apply {
-                        flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
-                    })
-                    finish()
-                    true
-                }
+//                R.id.nav_saya -> {
+////                    {
+////                        = Intent.FLAG_ACTIVITY_NO_ANIMATION
+////                    })
+//                    finish()
+//                    true
+//                }
                 else -> false
             }
         }

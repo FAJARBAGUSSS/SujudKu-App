@@ -44,14 +44,14 @@ class DzikirDoaActivity : AppCompatActivity() {
 
                     true
                 }
-                R.id.nav_saya -> {
-                    // Pindah ke ProfileActivity
-                    startActivity(Intent(this, ProfileActivity::class.java).apply {
-                        flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
-                    })
-                    finish() // Tutup Activity ini
-                    true
-                }
+//                R.id.nav_saya -> {
+//                    // Pindah ke ProfileActivity
+//                    startActivity(Intent(this, ProfileActivity::class.java).apply {
+//                        flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
+//                    })
+//                    finish() // Tutup Activity ini
+//                    true
+//                }
                 else -> false
             }
         }
