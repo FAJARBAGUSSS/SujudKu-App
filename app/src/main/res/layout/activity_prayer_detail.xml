@@ -50,11 +50,15 @@
                     android:tint="#1B5E20"
                     android:contentDescription="Notifikasi" />
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:id="@+id/btn_share"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:src="@drawable/ic_share"
-                    android:tint="#1B5E20"
-                    android:contentDescription="Share" />
+                    android:contentDescription="Share"
+                    android:layout_margin="12dp"
+                    android:padding="6dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_alignParentEnd="true"/>
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
