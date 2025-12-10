@@ -15,8 +15,6 @@
         android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Share Button (ImageView sebagai tombol) -->
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -42,7 +40,6 @@
             android:contentDescription="Notifikasi" />
 
     </LinearLayout>
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_next_prayer"
@@ -93,6 +90,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
     <ScrollView

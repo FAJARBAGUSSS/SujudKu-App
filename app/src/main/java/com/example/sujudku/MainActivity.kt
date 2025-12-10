@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_saya -> {
-                    startActivity(Intent(this, ProfileActivity::class.java).apply {
+                    startActivity(Intent(this, ProfilActivity::class.java).apply {
                         flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
                     })
                     finish()
